@@ -5,8 +5,8 @@
 
 # --- Configuration ---
 INTERVAL=5 # Refresh interval in seconds (0.2 Hz)
-CHART_WIDTH=10 # Width of the network speed chart in characters (used for scaling, sparkline uses HISTORY_POINTS)
-HISTORY_POINTS=50 # Number of data points for network speed history (increased)
+CHART_WIDTH=25 # Width of the network speed chart in characters (used for scaling, sparkline uses HISTORY_POINTS)
+HISTORY_POINTS=25 # Number of data points for network speed history (increased)
 # Width of the network speed chart in characters (REMOVED)
 # Number of data points for network speed history (REMOVED)
 
@@ -540,7 +540,7 @@ generate_bar() {
 # Usage: generate_sparkline "10 20 5 30 15"
 generate_sparkline() {
     local data_str="$1"
-    local ticks=(⣀ ⣤ ⣶ ⣿) # Use Braille characters
+    local ticks=(  ▂ ▃ ▄ ▅ ▆ ▇ █) # Use left-to-right block characters
     local num_ticks=${#ticks[@]}
     local -a values=($data_str) # Convert space-separated string to array
     local count=${#values[@]}
